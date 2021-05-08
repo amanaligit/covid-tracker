@@ -28,7 +28,7 @@ function Register() {
       .string()
       .min(8, "password is too weak")
       .matches(
-        /^([a-z])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z\d@$!%*#?&]{8,24}$/,
+        /^([a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@$%^&(){}[])[A-Za-z\d@$!%*#?&]{8,24}$/,
         "Must Contain minimum 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character except the first character"
       )
       .required("password is required"),
@@ -47,6 +47,7 @@ function Register() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, dirtyFields },
   } = useForm({
     resolver: yupResolver(schema),
@@ -62,10 +63,13 @@ function Register() {
 
   // POST request to server with credentials to register the user
   const registerUser = async (data) => {
+    setError(null);
+    setSuccess(false);
     axios
       .post(`${process.env.REACT_APP_API_URL}auth/user`, data)
       .then((response) => {
         setSuccess(true);
+        reset();
       })
       .catch((error) => {
         setError(error.response.data.message);

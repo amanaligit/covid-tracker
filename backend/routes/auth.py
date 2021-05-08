@@ -75,7 +75,7 @@ def create_user():
     try:
         # very all credentials using regular expressions and throw an error if any of them does not match
         assert(re.search(
-            "^([a-z])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z\d@$!%*#?&]{8,24}$", data['password']) is not None)
+            "^([a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@$%^&(){}[])[A-Za-z\d@$!%*#?&]{8,24}$", data['password']) is not None)
         assert(re.search(
             "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", data['email']) is not None)
         assert(re.search(
