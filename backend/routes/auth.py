@@ -73,7 +73,7 @@ def create_user():
 
     # server side verification of the user credentials, we also have client side verification in frotend
     try:
-        # very all credentials using regular expressions and throw an error if any of them does not match
+        # verify all credentials using regular expressions and throw an error if any of them does not match
         assert(re.search(
             "^([a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@$%^&(){}[])[A-Za-z\d@$!%*#?&]{8,24}$", data['password']) is not None)
         assert(re.search(

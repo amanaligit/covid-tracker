@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logout from "./Logout";
 import { AiOutlineLogin } from "react-icons/ai";
 import { RiVirusFill } from "react-icons/ri";
@@ -28,25 +28,34 @@ function Navbar({ signedIn, setSignedIn }) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto  text-center">
           <li className="nav-item">
-            <Link className={`nav-link ${signedIn ? "disabled" : null}`} to="/">
+            <NavLink
+              className={`nav-link ${signedIn ? "disabled" : null}`}
+              exact
+              to="/"
+              activeClassName="active"
+            >
               <AiOutlineLogin /> Login
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link
+            <NavLink
               className={`nav-link ${signedIn ? "disabled" : null}`}
               to="/register"
+              exact
+              activeClassName="active"
             >
               <FaSignInAlt /> Register
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link
+            <NavLink
               className={`nav-link ${signedIn ? null : "disabled"}`}
               to="/update-form"
+              exact
+              activeClassName="active"
             >
               <ImDatabase /> Update Covid-19 data
-            </Link>
+            </NavLink>
           </li>
         </ul>
 

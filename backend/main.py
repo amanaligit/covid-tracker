@@ -1,5 +1,5 @@
-# this is the main file that gets called when we run the server. it just imports the app and database from other files and runs the server
-# run server by "python main.py"
+# this is the main file that gets called when we run the server. it just imports the app database, and routes from other files and runs the server
+# run server by "python main.py" command
 
 from app import app, db
 import routes.auth

@@ -14,7 +14,7 @@ function Login({ setSignedIn, signedIn }) {
   // set error state from useState hook to display the error
   const [error, setError] = useState(null);
 
-  // login the user by api call the user to the auth route
+  // login the user by api call to the auth/login route
   const login = async (data) => {
     axios
       .post(`${process.env.REACT_APP_API_URL}auth/login`, data)
