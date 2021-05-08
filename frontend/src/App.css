@@ -1,0 +1,90 @@
+html,
+body {
+  height: 100%;
+  background-image: url("bg.png");
+  color: white;
+}
+
+.nav-item {
+  font-size: 1.5rem;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 94%;
+}
+
+a.disabled {
+  /* Make the disabled links grayish*/
+  /* And disable the pointer events */
+  pointer-events: none;
+}
+
+.global-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+a {
+  color: rgb(74, 184, 248);
+}
+
+label {
+  margin-top: 10px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.card-title {
+  font-weight: 300;
+}
+
+.btn {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.login-form {
+  max-width: 330px;
+  margin: 20px;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.update-form {
+  min-width: 40%;
+  max-width: 100%;
+  margin-top: 50px;
+  height: 90%;
+  overflow: auto;
+}
+
+.sign-up {
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
